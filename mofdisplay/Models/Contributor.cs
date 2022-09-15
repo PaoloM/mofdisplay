@@ -6,7 +6,7 @@ namespace mofdisplay.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ContributorID { get; set; }
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         ICollection<Kit> Kits { get; set; }
 

@@ -1,0 +1,48 @@
+﻿@page
+@model mofdisplay.Pages.Displays.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Display[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Display[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Display[0].Curator)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Display) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Curator.ContributorID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.DisplayID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.DisplayID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.DisplayID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

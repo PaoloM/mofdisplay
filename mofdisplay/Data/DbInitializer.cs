@@ -22,8 +22,8 @@ namespace mofdisplay.Data
 
             var displays = new Display[]
             {
-                new Display{DisplayID=1, Title="T-6 monograph", StartDate=new DateTime(2022, 8, 1)},
-                new Display{DisplayID=2, Title="Aircrafts of the aces",StartDate=new DateTime(2023, 2, 2)}
+                new Display{DisplayID=1, Title="T-6 monograph", StartDate=new DateTime(2022, 8, 1), CuratorID=1},
+                new Display{DisplayID=2, Title="Aircrafts of the aces",StartDate=new DateTime(2023, 2, 2), CuratorID=2}
             };
 
             context.Displays.AddRange(displays);
